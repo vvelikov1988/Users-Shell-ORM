@@ -1,0 +1,9 @@
+Users.objects.all()
+Users.objects.last()
+Users.objects.first()
+user_to_update = User.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+user_to_delete = User.objects.get(id=2)
+user_to_delete.delete()
+User.objects.all().order_by("-last_name")

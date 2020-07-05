@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>All Users</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for user in user_data %}
+                    <tr>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.age }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table><BR><BR>
+
+        <form action="/results" method="POST">
+            {% csrf_token %}
+        <label for ='fname'>First Name</label> <br>
+        <input type="text" id='fname' name = 'fname'> <br>
+
+        <label for ='lname'>Last Name</label> <br>
+        <input type="text" id='lname' name = 'lname'> <br>
+
+        <label for ='email'>Email</label> <br>
+        <input type="text" id='email' name = 'email'> <br>
+
+        <label for ='age'>Age</label> <br>
+        <input type="text" id='age' name = 'age'> <br>
+        
+        <input type="submit" value="submit">
+        </form>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
